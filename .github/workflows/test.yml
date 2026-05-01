@@ -1,17 +1,19 @@
-name:python workflow 
-on:[push]
+name: python workflow
+
+on: [push]
+
 jobs:
   test:
     runs-on: ubuntu-latest
 
     steps:
-    - name:checkout code
-      uses:actions/checkout@v4
+      - name: checkout code
+        uses: actions/checkout@v4
 
-    - name:setup python
-      uses:actions/setup-python@v5
-      with:
-       python version:"3.10"
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
 
-    - name:run test
-      run:python 1.py
+      - name: run test
+        run: python 1.py
